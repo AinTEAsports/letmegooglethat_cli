@@ -1,5 +1,5 @@
 import sys
-import clipboard
+import pyperclip
 
 QUERY_TEMPLATE = r"https://letmegooglethat.com/?q={QUERY}"
 
@@ -11,5 +11,5 @@ if len(sys.argv) == 1:
 query_search = '+'.join(sys.argv[1:])
 url = QUERY_TEMPLATE.format(QUERY=query_search)
 
-clipboard.copy(url)
+pyperclip.copy(url)
 
