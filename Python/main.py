@@ -1,7 +1,7 @@
 import sys
 import pyperclip
 
-QUERY_TEMPLATE = r"https://letmegooglethat.com/?q={QUERY}"
+QUERY_TEMPLATE = "https://letmegooglethat.com/?q={QUERY}"
 
 
 if len(sys.argv) == 1:
