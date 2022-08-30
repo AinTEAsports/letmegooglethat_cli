@@ -40,8 +40,10 @@ def gui_main() -> None:
     copy_query_button = tkinter.Button(
         root,
         text="Copy query to clipboard",
-        command=pyperclip.copy(query_box.get("1.0", "end-1c"))
-    )
+        command=lambda :pyperclip.copy(
+                QUERY_TEMPLATE.format(QUERY=query_box.get("1.0", "end-1c").replace(' ', '+'))
+            )
+        )
     copy_query_button.pack()
 
     root.mainloop()
