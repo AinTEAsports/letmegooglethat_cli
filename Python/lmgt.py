@@ -21,6 +21,10 @@ def show_help() -> None:
 """)
 
 
+def copy_and_quit(to_copy: str, root) -> None:
+    pyperclip.copy(to_copy)
+    root.destroy()
+
 
 def gui_main() -> None:
     """GUI version of the program
@@ -40,8 +44,9 @@ def gui_main() -> None:
     copy_query_button = tkinter.Button(
         root,
         text="Copy query to clipboard",
-        command=lambda :pyperclip.copy(
-                QUERY_TEMPLATE.format(QUERY=query_box.get("1.0", "end-1c").replace(' ', '+'))
+        command=lambda :copy_and_quit(
+                QUERY_TEMPLATE.format(QUERY=query_box.get("1.0", "end-1c").replace(' ', '+')),
+                root
             )
         )
     copy_query_button.pack()
